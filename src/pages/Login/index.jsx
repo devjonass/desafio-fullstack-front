@@ -6,6 +6,7 @@ import { loginSchema } from "./loginSchema";
 import { AuthContext } from "../../contexts/AuthContext";
 import { StyledLoginPage } from "./style";
 import "react-toastify/dist/ReactToastify.css";
+import logo from "./loginSchema";
 
 export const Login = () => {
   const { loading, NewLogin, setLoading } = useContext(AuthContext);
