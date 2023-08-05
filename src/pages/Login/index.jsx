@@ -6,7 +6,6 @@ import { loginSchema } from "./loginSchema";
 import { AuthContext } from "../../contexts/AuthContext";
 import { StyledLoginPage } from "./style";
 import "react-toastify/dist/ReactToastify.css";
-import logo from "./loginSchema";
 
 export const Login = () => {
   const { loading, NewLogin, setLoading } = useContext(AuthContext);
@@ -85,7 +84,7 @@ export const Login = () => {
         </button>
       </section>
       <section className="secApresentation">
-        <img src="src/images/logo.png" alt="" />
+        <img src={import.meta.env.BASE_URL + "images/logo.png"} alt="" />
       </section>
     </StyledLoginPage>
   );

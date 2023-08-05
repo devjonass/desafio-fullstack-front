@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
       const { token, client: clientResponse } = response.data;
       setClient(clientResponse);
       localStorage.setItem("@TOKEN", token);
-      toast.success("Login relizado com sucesso!");
+      toast.success("Login realizado com sucesso!");
 
       api.defaults.headers.common[
         "Authorization"
@@ -35,10 +35,8 @@ export const AuthProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
   const getClient = async () => {
     const tokenValidate = localStorage.getItem("@TOKEN");
-
     if (!tokenValidate) {
       setNewLoading(false);
       return;
@@ -46,7 +44,6 @@ export const AuthProvider = ({ children }) => {
     api.defaults.headers.common["Authorization"] = `Bearer ${tokenValidate}`;
     try {
       const response = await api.get(`/clients/${tokenValidate}`);
-
       setClient(response.data);
     } catch (error) {
       console.error(error);
@@ -54,17 +51,16 @@ export const AuthProvider = ({ children }) => {
       setNewLoading(false);
     }
   };
-
   useEffect(() => {
     getClient();
   }, []);
 
+  
   const NewRegister = async (data) => {
     try {
       setLoading(true);
       await api.post("/clients", data);
-      console.log(data);
-      toast.success("Cadastro relizado com sucesso!");
+      toast.success("Cadastro realizado com sucesso!");
       setTimeout(() => {
         navigate("/");
       }, 1000);
@@ -75,17 +71,15 @@ export const AuthProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
   return (
     <AuthContext.Provider
       value={{
         loading,
         setLoading,
-        NewLogin,
+        newLoading,
         client,
         setClient,
-        newLoading,
-        setNewLoading,
+        NewLogin,
         NewRegister,
         getClient,
       }}

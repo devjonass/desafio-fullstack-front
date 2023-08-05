@@ -9,7 +9,6 @@ import { RegisterContactModal } from "../../components/RegisterContactModal";
 import { EditContactModal } from "../../components/EditContactModal";
 import { ContactsModal } from "../../components/ContactsModal";
 import "react-toastify/dist/ReactToastify.css";
-import logo from "../../images/logo.png";
 
 export const Dashboard = () => {
   const { client, newLoading } = useContext(AuthContext);
@@ -38,7 +37,11 @@ export const Dashboard = () => {
       {newLoading && <div>Carregando...</div>}
       {client && (
         <StyledHomePage>
-          <img src={logo} alt="logo contact viewer" className="logoKenziHub" />
+          <img
+            src={import.meta.env.BASE_URL + "images/logo.png"}
+            alt=""
+            className="logoKenziHub"
+          />
           <header className="headerHome">
             <button className="btComeBackLogin" onClick={goLoginClick}>
               Sair
