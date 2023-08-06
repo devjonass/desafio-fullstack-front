@@ -57,7 +57,7 @@ export const StyleCardContact = styled.li`
   }
 
   .btDelete {
-    background-image: url("public/images/trash2.png");
+    /*background-image: url("public/images/trash2.png");*/
     background-position: center;
     background-repeat: no-repeat;
     width: 2.23438rem;
@@ -70,7 +70,7 @@ export const StyleCardContact = styled.li`
   }
 
   .btEdit {
-    background-image: url("public/images/lápis.png");
+    /*background-image: url("public/images/lápis.png");*/
     background-position: center;
     background-repeat: no-repeat;
     width: 2.638rem;
